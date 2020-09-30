@@ -1,2 +1,27 @@
-# social-media-analysis
-Repo for the final work of the discipline (CSI-001) Social Media Analysis - UFOP
+
+<h1 align="center"> social-media-analysis </h1>
+
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/Naereen/StrapDown.js.svg)](https://GitHub.com/LucasPereiraMiranda/social-media-analysis/pull/)
+[![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://GitHub.com/LucasPereiraMiranda/social-media-analysis/issues/)  
+
+
+<p align="justify"> Repositório para o trabalho final da disciplina (CSI-001) Análise de Mídias Sociais - UFOP </p>
+
+## Objetivos
+```
+  - [x] Iniciar o Projeto
+  - []  Criar rotinas para pre-processamento das mensagens
+  - []  Aplicar a estrategia de Stemming
+  - []  Definir o número de topicos que serao gerados
+  - []  Avaliar os topicos gerados
+```
+
+### Instale as dependências necessárias no seu ambiente python3 (ou virtualenv)
+
+```shell
+  pip install -r requirements.txt
+```
+
+## Licença
+[MIT](https://choosealicense.com/licenses/mit/)
