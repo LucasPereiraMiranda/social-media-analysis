@@ -25,4 +25,4 @@
 ```
 
 ## Licença
-[MIT](https://choosealicense.com/licenses/mit/) [![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[MIT](https://choosealicense.com/licenses/mit/)
