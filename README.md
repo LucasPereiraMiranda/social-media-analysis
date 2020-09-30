@@ -1,5 +1,5 @@
 
-<h1 align="center"> social-media-analysis </h1>
+<h1 align="center"> Análise de mídias sociais </h1>
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/Naereen/StrapDown.js.svg)](https://GitHub.com/LucasPereiraMiranda/social-media-analysis/pull/)
