@@ -5,9 +5,8 @@ from datetime import timedelta
 from nltk.stem.snowball import SnowballStemmer
 import json,re,nltk,gzip,string,unicodedata,time
 
-
 #===============================================================================
-# excecao criada
+# excecao desenvolvida para ser lancada quando um post nao tiver mensagem
 #===============================================================================
 class PostWithoutMessageException(Exception):
     pass
@@ -83,6 +82,7 @@ def replace_break_lines(text):
 #===============================================================================
 def pre_process_message(message):
     pre_processed_message = remove_url(message)
+    pre_processed_message = get_unicode_normalized(pre_processed_message)
     pre_processed_message = convert_to_lower(pre_processed_message)
     pre_processed_message = replace_break_lines(pre_processed_message)
     pre_processed_message = remove_numbers(pre_processed_message)
@@ -106,6 +106,9 @@ def get_list_posts_from_path(posts_file_path):
 def get_unicode_normalized(text):
     return unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('utf8')
 
+#===============================================================================
+# retorna lista com o par chave/valor de menssagens pre-processadas
+#===============================================================================
 def generate_list_pre_processed_posts(post_list):
     pre_processed_post_list = []
     for post in post_list:
@@ -114,7 +117,7 @@ def generate_list_pre_processed_posts(post_list):
                 dict_post = json.loads(post)
             if not 'message' in dict_post.keys() or dict_post['message'] =='':
                 raise PostWithoutMessageException('this post does not have message')
-            message = get_unicode_normalized(dict_post["message"])
+            message = dict_post["message"]
             dict_post["pre_processed_message"] = pre_process_message(message)
             pre_processed_post_list.append(dict_post)
         except PostWithoutMessageException as err:
@@ -126,45 +129,48 @@ def generate_list_pre_processed_posts(post_list):
 # converte list para str - ['hello','world'] -> 'hello world'
 #===============================================================================
 def join_tokenized_message(tokenized_message):
-    message_str = ' '
-    message_str = message_str.join(tokenized_message)
-    return message_str
+    if tokenized_message == None:
+        return None
+    elif tokenized_message == []:
+        return ' '
+    else:
+        message_str = ' '
+        message_str = message_str.join(tokenized_message)
+        return message_str
 
 
 def write_list_in_csv_file(pre_processed_post_list,output_file):
-
     with open(output_file, 'wt') as file:
-
         file.write('created_time,id,pre_processed_message,shares,status_type,full_picture,reactions_like,reactions_haha,reactions_wow,reactions_sad,reactions_angry,reactions_love\n')
-        for post in pre_processed_post_list:
+        for processed_post in pre_processed_post_list:
             file.write('{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11}\n'
-                .format(str(post['created_time']),
-                        str(post['id']),
-                        str(join_tokenized_message(post['pre_processed_message'])),
-                        str(post['shares']['count'] if ('shares' in post) else 0),
-                        str(post['status_type']),
-                        str(post['full_picture'] if ('full_picture' in post) else None),
-                        str(post['reactions_like']['summary']['total_count']),
-                        str(post['reactions_haha']['summary']['total_count']),
-                        str(post['reactions_wow']['summary']['total_count']),
-                        str(post['reactions_sad']['summary']['total_count']),
-                        str(post['reactions_angry']['summary']['total_count']),
-                        str(post['reactions_love']['summary']['total_count']),
+                .format(str(processed_post['created_time']),
+                        str(processed_post['id']),
+                        str(join_tokenized_message(processed_post['pre_processed_message'])),
+                        str(processed_post['shares']['count'] if ('shares' in processed_post) else 0),
+                        str(processed_post['status_type']),
+                        str(processed_post['full_picture'] if ('full_picture' in processed_post) else None),
+                        str(processed_post['reactions_like']['summary']['total_count']),
+                        str(processed_post['reactions_haha']['summary']['total_count']),
+                        str(processed_post['reactions_wow']['summary']['total_count']),
+                        str(processed_post['reactions_sad']['summary']['total_count']),
+                        str(processed_post['reactions_angry']['summary']['total_count']),
+                        str(processed_post['reactions_love']['summary']['total_count']),
                 )
             )
 
 def main():
 
     #===============================================================================
-    # coloque o caminho do diretorio social-media-analysis
+    # coloque o caminho do diretorio do projeto
     #===============================================================================
     destinaton_path = '/home/lucas/UFOP/ple_2020/analise_midias_sociais/social-media-analysis'
     data_path = '%s/data' % destinaton_path
 
-    facebook_pages = ['bolsonaro','haddad']
+    facebook_pages = ['haddad','bolsonaro']
 
     for facebook_page in facebook_pages:
-        print('\n\n\n*********** Starting pre processing from %s ***********\n\n\n' % facebook_page)
+        print('\n Starting pre processing posts from %s ***********\n' % facebook_page)
 
         posts_file_path = '%s/%s/all_posts.json.gz' % (data_path, facebook_page)
         output_posts_file_path = '%s/all_pp_posts_%s_posts.csv' % (data_path, facebook_page)
