@@ -1,0 +1,346 @@
+<<<<<<<<makeGraphRequest - GraphAPIError>>>>>>>>>
+	GraphAPIError found: An unknown error occurred
+	new number_of_comments: 2500
+	checking_limit - x-app-usage_not_found
+<< PAGING -- no_data_in_response >>
+	904277726319518_2157802730951756 - Response_size_exceeded
+	retrying with 2500
+<<<<<<<<makeGraphRequest - GraphAPIError>>>>>>>>>
+	GraphAPIError found: Please reduce the amount of data you're asking for, then retry your request
+	new number_of_comments: 2500
+
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 1
+
+Waiting 5.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 2
+
+Waiting 10.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 3
+
+Waiting 15.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 4
+
+Waiting 20.00 minutes to restart again...
+<<<<<<<< 4 EXCEPTIONS - REQUEST ABORTED >>>>>>>>>
+Response is null.
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 1
+
+Waiting 5.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 2
+
+Waiting 10.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 3
+
+Waiting 15.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 4
+
+Waiting 20.00 minutes to restart again...
+<<<<<<<< 4 EXCEPTIONS - REQUEST ABORTED >>>>>>>>>
+Response is null.
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 1
+
+Waiting 5.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 2
+
+Waiting 10.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 3
+
+Waiting 15.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 4
+
+Waiting 20.00 minutes to restart again...
+<<<<<<<< 4 EXCEPTIONS - REQUEST ABORTED >>>>>>>>>
+Response is null.
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 1
+
+Waiting 5.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 2
+
+Waiting 10.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 3
+
+Waiting 15.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 4
+
+Waiting 20.00 minutes to restart again...
+<<<<<<<< 4 EXCEPTIONS - REQUEST ABORTED >>>>>>>>>
+Response is null.
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 1
+
+Waiting 5.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 2
+
+Waiting 10.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 3
+
+Waiting 15.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 4
+
+Waiting 20.00 minutes to restart again...
+<<<<<<<< 4 EXCEPTIONS - REQUEST ABORTED >>>>>>>>>
+Response is null.
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 1
+
+Waiting 5.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 2
+
+Waiting 10.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 3
+
+Waiting 15.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 4
+
+Waiting 20.00 minutes to restart again...
+<<<<<<<< 4 EXCEPTIONS - REQUEST ABORTED >>>>>>>>>
+Response is null.
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 1
+
+Waiting 5.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 2
+
+Waiting 10.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 3
+
+Waiting 15.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 4
+
+Waiting 20.00 minutes to restart again...
+<<<<<<<< 4 EXCEPTIONS - REQUEST ABORTED >>>>>>>>>
+Response is null.
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 1
+
+Waiting 5.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 2
+
+Waiting 10.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 3
+
+Waiting 15.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 4
+
+Waiting 20.00 minutes to restart again...
+<<<<<<<< 4 EXCEPTIONS - REQUEST ABORTED >>>>>>>>>
+Response is null.
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 1
+
+Waiting 5.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 2
+
+Waiting 10.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 3
+
+Waiting 15.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 4
+
+Waiting 20.00 minutes to restart again...
+<<<<<<<< 4 EXCEPTIONS - REQUEST ABORTED >>>>>>>>>
+Response is null.
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 1
+
+Waiting 5.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 2
+
+Waiting 10.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 3
+
+Waiting 15.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 4
+
+Waiting 20.00 minutes to restart again...
+<<<<<<<< 4 EXCEPTIONS - REQUEST ABORTED >>>>>>>>>
+Response is null.
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 1
+
+Waiting 5.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 2
+
+Waiting 10.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 3
+
+Waiting 15.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 4
+
+Waiting 20.00 minutes to restart again...
+<<<<<<<< 4 EXCEPTIONS - REQUEST ABORTED >>>>>>>>>
+Response is null.
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 1
+
+Waiting 5.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 2
+
+Waiting 10.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 3
+
+Waiting 15.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 4
+
+Waiting 20.00 minutes to restart again...
+<<<<<<<< 4 EXCEPTIONS - REQUEST ABORTED >>>>>>>>>
+Response is null.
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 1
+
+Waiting 5.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 2
+
+Waiting 10.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 3
+
+Waiting 15.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 4
+
+Waiting 20.00 minutes to restart again...
+<<<<<<<< 4 EXCEPTIONS - REQUEST ABORTED >>>>>>>>>
+Response is null.
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 1
+
+Waiting 5.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 2
+
+Waiting 10.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 3
+
+Waiting 15.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 4
+
+Waiting 20.00 minutes to restart again...
+<<<<<<<< 4 EXCEPTIONS - REQUEST ABORTED >>>>>>>>>
+Response is null.
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 1
+
+Waiting 5.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 2
+
+Waiting 10.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 3
+
+Waiting 15.00 minutes to restart again...
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 4
+
+Waiting 20.00 minutes to restart again...
+<<<<<<<< 4 EXCEPTIONS - REQUEST ABORTED >>>>>>>>>
+Response is null.
+<<<<<<<< REGULAR Exception >>>>>>>>>
+
+# exceptions: 1
+
+Waiting 5.00 minutes to restart again...

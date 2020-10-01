@@ -1,0 +1,5 @@
+collection_started: 2020-04-04--11-45-18
+22 - Rate Limit Reached. Cooling Time 20.00 minutes
+total_requests: 447 -- total_comments: 336399
+22 - Rate Limit Reached. Cooling Time 30.00 minutes
+total_requests: 448 -- total_comments: 336628
