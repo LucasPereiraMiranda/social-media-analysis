@@ -18,7 +18,7 @@
   - []  Avaliar os topicos gerados
 ```
 
-### Instale as dependências necessárias no seu ambiente python3 (ou virtualenv)
+## Instale as dependências necessárias no seu ambiente python3 (ou virtualenv)
 
 - O arquivo requiriments.txt possui as dependências básicas necesárias para o projeto python
 
