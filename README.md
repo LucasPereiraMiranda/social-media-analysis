@@ -5,8 +5,6 @@
 [![PyPI version fury.io](https://badge.fury.io/py/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/Naereen/StrapDown.js.svg)](https://GitHub.com/LucasPereiraMiranda/social-media-analysis/pull/)
 [![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://GitHub.com/LucasPereiraMiranda/social-media-analysis/issues/)  
-[![repo size](https://img.shields.io/github/repo-size/LucasPereiraMiranda/social-media-analysis)
-[![repo size](https://img.shields.io/github/last-commit/LucasPereiraMiranda/social-media-analysis)
 
 <p align="justify"> Repositório para o trabalho final da disciplina (CSI-001) Análise de Mídias Sociais - UFOP </p>
 
