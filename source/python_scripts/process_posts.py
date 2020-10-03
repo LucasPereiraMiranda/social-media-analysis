@@ -1,7 +1,6 @@
 #coding: utf-8 
 
 from datetime import datetime
-from datetime import timedelta
 from nltk.stem.snowball import SnowballStemmer
 import json,re,nltk,gzip,string,unicodedata,time
 
@@ -10,12 +9,6 @@ import json,re,nltk,gzip,string,unicodedata,time
 #===============================================================================
 class PostWithoutMessageException(Exception):
     pass
-
-#===============================================================================
-# obter tempo atual
-#===============================================================================
-def get_current_time():
-    return '%s' % (time.strftime("%Y-%m-%d--%H-%M-%S"))
 
 #===============================================================================
 # remove urls
@@ -164,16 +157,16 @@ def main():
     #===============================================================================
     # coloque o caminho do diretorio do projeto
     #===============================================================================
-    destinaton_path = '/home/lucas/UFOP/ple_2020/analise_midias_sociais/social-media-analysis'
-    data_path = '%s/data' % destinaton_path
+    destinaton_path = '/home/lucas/UFOP/ple_2020/analise_midias_sociais/final-work'
+    data_path = '{0}/data'.format(destinaton_path)
 
     facebook_pages = ['haddad','bolsonaro']
 
     for facebook_page in facebook_pages:
-        print('\n Starting pre processing posts from %s ***********\n' % facebook_page)
+        print('\nprocess post: {0} \n'.format(str(facebook_page)))
 
-        posts_file_path = '%s/%s/all_posts.json.gz' % (data_path, facebook_page)
-        output_posts_file_path = '%s/all_pp_posts_%s_posts.csv' % (data_path, facebook_page)
+        posts_file_path = '{0}/{1}/all_posts.json.gz'.format(data_path, facebook_page)
+        output_posts_file_path = '{0}/all_pp_posts_{1}_posts.csv'.format(data_path, facebook_page)
 
         post_list = get_list_posts_from_path(posts_file_path)
         pre_processed_post_list = generate_list_pre_processed_posts(post_list)
@@ -182,7 +175,7 @@ def main():
     #===========================================================================
     # final logs
     #===========================================================================
-    print('process finished: {0}\n'.format(str(get_current_time())))
+    print('process finished\n')
 
 if __name__ == "__main__":
     main()
