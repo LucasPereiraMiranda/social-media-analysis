@@ -8,8 +8,6 @@
 
 <p align="justify"> Repositório para o trabalho final da disciplina (CSI-001) Análise de Mídias Sociais - UFOP </p>
 
-<p align="justify"> Repositório para o trabalho final da disciplina (CSI-001) Análise de Mídias Sociais - UFOP </p>
-
 ## Objetivos
 ```
   - [x] Iniciar o Projeto
