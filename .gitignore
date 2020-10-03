@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 # data files
-data/bolsonaro
-data/haddad
+data/bolsonaro/
+data/haddad/
