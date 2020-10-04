@@ -11,7 +11,7 @@
   </a>
 
   <a href="https://github.com/LucasPereiraMiranda/topic-modeling/issues">
-    <img alt="Repository issues" src="https://img.shields.io/gthub/issues/LucasPereiraMiranda/topic-modeling">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/LucasPereiraMiranda/topic-modeling">
   </a>
 
   <a href="https://github.com/LucasPereiraMiranda/topic-modeling/issues-pr/">
