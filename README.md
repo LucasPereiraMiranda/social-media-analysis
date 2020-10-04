@@ -1,12 +1,14 @@
 
-<h1 align="center"> Análise de mídias sociais </h1>
+<h1 align="center"> Análise - modelagem de tópicos </h1>
 
 
 [![PyPI version fury.io](https://badge.fury.io/py/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/Naereen/StrapDown.js.svg)](https://GitHub.com/LucasPereiraMiranda/social-media-analysis/pull/)
-[![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://GitHub.com/LucasPereiraMiranda/social-media-analysis/issues/)  
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/Naereen/StrapDown.js.svg)](https://GitHub.com/LucasPereiraMiranda/topic-modeling/pull/)
+[![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://GitHub.com/LucasPereiraMiranda/topic-modeling/issues/)  
 
-<p align="justify"> Repositório para o trabalho final da disciplina (CSI-001) Análise de Mídias Sociais - UFOP </p>
+<p align="justify"> Repositório para o trabalho final da disciplina (CSI-001) Análise de Mídias Sociais - UFOP. O presente trabalho visa inferir tópicos em mensagens de mídias
+sociais e realizar análises a partir desses tópicos.
+</p>
 
 ## Objetivos
 ```
