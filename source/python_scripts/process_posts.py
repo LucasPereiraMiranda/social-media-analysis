@@ -70,10 +70,17 @@ def replace_stop_words(tokenized_pre_processed_message):
 def replace_break_lines(text):
     return text.replace('\n', ' ')
 
+
 #===============================================================================
-# funcao para chamar as funcoes intermediarias do pre-processamento 
+# substituir todas as , dentro de um texto por um espaco em branco
 #===============================================================================
-def pre_process_message(message):
+def replace_commas(text):
+    return text.replace(',', ' ')
+
+#===============================================================================
+# funcao para chamar todas as funcoes intermediarias do pre-processamento 
+#===============================================================================
+def complete_pre_process_message(message):
     pre_processed_message = remove_url(message)
     pre_processed_message = get_unicode_normalized(pre_processed_message)
     pre_processed_message = convert_to_lower(pre_processed_message)
@@ -83,6 +90,17 @@ def pre_process_message(message):
     tokenized_pre_processed_message = replace_stop_words(tokenized_pre_processed_message)
     tokenized_pre_processed_message = remove_symbols(tokenized_pre_processed_message)
     #tokenized_pre_processed_message = obtain_stemming(tokenized_pre_processed_message)
+    return tokenized_pre_processed_message
+
+#===============================================================================
+# funcao para chamar algumas funcoes intermediarias do pre-processamento 
+#===============================================================================
+def partial_pre_process_message(message):
+    pre_processed_message = get_unicode_normalized(message)
+    pre_processed_message = replace_commas(pre_processed_message)
+    pre_processed_message = convert_to_lower(pre_processed_message)
+    pre_processed_message = replace_break_lines(pre_processed_message)
+    tokenized_pre_processed_message = tokenization(pre_processed_message)
     return tokenized_pre_processed_message
 
 #===============================================================================
@@ -111,10 +129,14 @@ def generate_list_pre_processed_posts(post_list):
             if not 'message' in dict_post.keys() or dict_post['message'] =='':
                 raise PostWithoutMessageException('this post does not have message')
             message = dict_post["message"]
-            dict_post["pre_processed_message"] = pre_process_message(message)
+            dict_post["pre_processed_message"] = complete_pre_process_message(message)
+            dict_post['message_min_processed'] = partial_pre_process_message(message)
+            dict_post['has_textual_message'] = True
             pre_processed_post_list.append(dict_post)
         except PostWithoutMessageException as err:
+            dict_post['has_textual_message'] = False
             dict_post["pre_processed_message"] = ' '
+            dict_post['message_min_processed'] = ' '
             pre_processed_post_list.append(dict_post)
     return pre_processed_post_list
 
@@ -134,12 +156,13 @@ def join_tokenized_message(tokenized_message):
 
 def write_list_in_csv_file(pre_processed_post_list,output_file):
     with open(output_file, 'wt') as file:
-        file.write('created_time,id,pre_processed_message,shares,status_type,full_picture,reactions_like,reactions_haha,reactions_wow,reactions_sad,reactions_angry,reactions_love\n')
+        file.write('created_time,id,pre_processed_message,message_min_processed,shares,status_type,full_picture,reactions_like,reactions_haha,reactions_wow,reactions_sad,reactions_angry,reactions_love,has_textual_message\n')
         for processed_post in pre_processed_post_list:
-            file.write('{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11}\n'
+            file.write('{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13}\n'
                 .format(str(processed_post['created_time']),
                         str(processed_post['id']),
                         str(join_tokenized_message(processed_post['pre_processed_message'])),
+                        str(join_tokenized_message(processed_post['message_min_processed'])),
                         str(processed_post['shares']['count'] if ('shares' in processed_post) else 0),
                         str(processed_post['status_type']),
                         str(processed_post['full_picture'] if ('full_picture' in processed_post) else None),
@@ -149,11 +172,12 @@ def write_list_in_csv_file(pre_processed_post_list,output_file):
                         str(processed_post['reactions_sad']['summary']['total_count']),
                         str(processed_post['reactions_angry']['summary']['total_count']),
                         str(processed_post['reactions_love']['summary']['total_count']),
+                        str(processed_post['has_textual_message'])
                 )
             )
 
 def main():
-
+    
     #===============================================================================
     # coloque o caminho do diretorio do projeto
     #===============================================================================
