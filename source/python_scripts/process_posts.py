@@ -89,7 +89,7 @@ def complete_pre_process_message(message):
     tokenized_pre_processed_message = tokenization(pre_processed_message)
     tokenized_pre_processed_message = replace_stop_words(tokenized_pre_processed_message)
     tokenized_pre_processed_message = remove_symbols(tokenized_pre_processed_message)
-    tokenized_pre_processed_message = obtain_stemming(tokenized_pre_processed_message)
+    #tokenized_pre_processed_message = obtain_stemming(tokenized_pre_processed_message)
     return tokenized_pre_processed_message
 
 #===============================================================================
