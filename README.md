@@ -82,7 +82,7 @@ indicado em data/.gitkepp (os arquivo resultantes da coleta não estão presente
   source /venv/bin/activate # Linux ou Mac
 ```
 ```powershell
-  \venv\Scripts\activate.bat # Windows
+  venv\Scripts\activate # Windows
 ```
 
 - Instale as dependências ao seu ambiente virtual executando:
