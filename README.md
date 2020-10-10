@@ -1,5 +1,5 @@
 
-<h1 align="center"> Análise e NLP - modelagem de tópicos </h1>
+<h1 align="center"> Análise de dados e NLP - modelagem de tópicos </h1>
 
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/LucasPereiraMiranda/topic-modeling">
