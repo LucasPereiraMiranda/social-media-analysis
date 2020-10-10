@@ -79,10 +79,10 @@ indicado em data/.gitkepp (os arquivo resultantes da coleta não estão presente
 - Ative o seu ambiente virtual executando:
 
 ```shell
-   source /venv/bin/activate # Linux ou Mac
+  source /venv/bin/activate # Linux ou Mac
 ```
 ```powershell
-   \venv\Scripts\activate.bat # Windows
+  \venv\Scripts\activate.bat # Windows
 ```
 
 - Instale as dependências ao seu ambiente virtual executando:
