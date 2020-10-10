@@ -55,11 +55,41 @@ Instale as dependências necessárias no seu ambiente python3 (ou virtualenv)
 - requiriments.txt possui as dependências básicas necessárias para o projeto
 
 ```shell
-  pip install -r requirements.txt
+  pip3 install -r requirements.txt
 ```
 
 Para processar os posts e comentarios é necessário ter o arquivo da coleta
 indicado em data/.gitkepp (os arquivo resultantes da coleta não estão presentes no repositório, apenas os processados)
+
+
+## Como criar um ambiente virtual (virtualenv) para o projeto? (opcional)
+
+- Com o python3 já instalado em seu computador, execute:
+
+```shell
+  pip3 install virtualenv
+```
+
+- Crie um novo ambiente virtual executando:
+
+```shell
+  virtualenv venv # venv é o nome do seu ambiente virtual isolado
+```
+
+- Ative o seu ambiente virtual executando:
+
+```shell
+   source /venv/bin/activate # Linux ou Mac
+```
+```powershell
+   \venv\Scripts\activate.bat # Windows
+```
+
+- Instale as dependências ao seu ambiente virtual executando:
+
+```shell
+  pip3 install -r requirements.txt
+```
 
 ## Licença
 [MIT](https://choosealicense.com/licenses/mit/)
