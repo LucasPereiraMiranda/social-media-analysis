@@ -184,7 +184,7 @@ def main():
     destinaton_path = '/home/lucas/UFOP/ple_2020/analise_midias_sociais/final-work'
     data_path = '{0}/data'.format(destinaton_path)
 
-    facebook_pages = ['haddad','bolsonaro']
+    facebook_pages = ['haddad','bolsonaro','ciro','amoedo','alckmin','marina','boulos']
 
     for facebook_page in facebook_pages:
         print('\nprocess post: {0} \n'.format(str(facebook_page)))

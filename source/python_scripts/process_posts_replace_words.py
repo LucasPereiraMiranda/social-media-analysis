@@ -14,6 +14,21 @@ LIST_NAMES_TO_REPLACE = [
     ('fernando haddad','fh'),
     ('fernando','fh'),
     ('haddad','fh'),
+    ('geraldo alckmin','ga'),
+    ('geraldo','ga'),
+    ('alckmin','ga'),
+    ('joao amoedo','ja'),
+    ('joao','ja'),
+    ('amoedo','ja'),
+    ('guilherme boulos','gb'),
+    ('guilherme','gb'),
+    ('boulos','gb'),
+    ('ciro gomes','cg'),
+    ('ciro','cg'),
+    ('gomes','cg'),
+    ('marina silva','ms'),
+    ('marina','ms'),
+    ('silva','ms')
 ]
 
 #===============================================================================
@@ -234,15 +249,15 @@ def join_tokenized_message(tokenized_message):
 
 def write_list_in_csv_file(pre_processed_post_list,output_file):
     with open(output_file, 'wt') as file:
-        file.write('created_time,id,message_max_processed,m_m_p_replaced_to_abbreviation,shares,status_type,full_picture,reactions_like,reactions_haha,reactions_wow,reactions_sad,reactions_angry,reactions_love,has_textual_message\n')
+        file.write('created_time,id,message_max_processed,m_m_p_replaced_to_empty,shares,status_type,full_picture,reactions_like,reactions_haha,reactions_wow,reactions_sad,reactions_angry,reactions_love,has_textual_message\n')
         for processed_post in pre_processed_post_list:
             file.write('{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13}\n'
                 .format(str(processed_post['created_time']),
                         str(processed_post['id']),
                         str(processed_post['message_max_processed']),
                         #str(processed_post['message_min_processed']),
-                        str(processed_post['message_max_processed_slogans_and_names_replaced_to_abbreviation']),
-                        #str(processed_post['message_max_processed_slogans_and_names_replaced_to_empty_space']),
+                        #str(processed_post['message_max_processed_slogans_and_names_replaced_to_abbreviation']),
+                        str(processed_post['message_max_processed_slogans_and_names_replaced_to_empty_space']),
                         str(processed_post['shares']['count'] if ('shares' in processed_post) else 0),
                         str(processed_post['status_type']),
                         str(processed_post['full_picture'] if ('full_picture' in processed_post) else None),
@@ -264,13 +279,13 @@ def main():
     destinaton_path = '/home/lucas/UFOP/ple_2020/analise_midias_sociais/final-work'
     data_path = '{0}/data'.format(destinaton_path)
 
-    facebook_pages = ['haddad','bolsonaro']
+    facebook_pages = ['haddad','bolsonaro','ciro','amoedo','alckmin','marina','boulos']
 
     for facebook_page in facebook_pages:
         print('\nprocess posts: {0} \n'.format(str(facebook_page)))
 
         posts_file_path = '{0}/{1}/all_posts.json.gz'.format(data_path, facebook_page)
-        output_posts_file_path = '{0}/all_pp_posts_{1}_replaced_to_abbreviation.csv'.format(data_path, facebook_page)
+        output_posts_file_path = '{0}/all_pp_posts_{1}_replaced_to_empty.csv'.format(data_path, facebook_page)
 
         post_list = get_list_posts_from_path(posts_file_path)
         pre_processed_post_list = generate_list_pre_processed_posts(post_list)
