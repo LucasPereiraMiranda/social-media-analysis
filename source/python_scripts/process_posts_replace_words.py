@@ -28,7 +28,8 @@ LIST_NAMES_TO_REPLACE = [
     ('gomes','cg'),
     ('marina silva','ms'),
     ('marina','ms'),
-    ('silva','ms')
+    ('silva','ms'),
+    ('lula','l')
 ]
 
 #===============================================================================
@@ -100,7 +101,10 @@ def remove_symbols(tokenized_pre_processed_message):
 # remover stop words
 #===============================================================================
 def replace_stop_words(tokenized_pre_processed_message):
-    stop_words = [word for word in nltk.corpus.stopwords.words('portuguese')]
+    stop_words = [get_unicode_normalized(word) for word in nltk.corpus.stopwords.words('portuguese')]
+    stop_words.append('link')
+    stop_words.append('youtube')
+    stop_words.append('sobre')
     processed_text = [word for word in tokenized_pre_processed_message if word not in stop_words]
     return processed_text
 
@@ -279,13 +283,13 @@ def main():
     destinaton_path = '/home/lucas/UFOP/ple_2020/analise_midias_sociais/final-work'
     data_path = '{0}/data'.format(destinaton_path)
 
-    facebook_pages = ['haddad','bolsonaro','ciro','amoedo','alckmin','marina','boulos']
+    facebook_pages = ['haddad','bolsonaro']
 
     for facebook_page in facebook_pages:
         print('\nprocess posts: {0} \n'.format(str(facebook_page)))
 
         posts_file_path = '{0}/{1}/all_posts.json.gz'.format(data_path, facebook_page)
-        output_posts_file_path = '{0}/all_pp_posts_{1}_replaced_to_empty.csv'.format(data_path, facebook_page)
+        output_posts_file_path = '{0}/all_pp_posts_{1}_replaced_to_empty_removing_other_words.csv'.format(data_path, facebook_page)
 
         post_list = get_list_posts_from_path(posts_file_path)
         pre_processed_post_list = generate_list_pre_processed_posts(post_list)

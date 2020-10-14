@@ -1,5 +1,5 @@
 #coding: utf-8 
-
+# livia_miraanda
 from datetime import datetime
 from nltk.stem.snowball import SnowballStemmer
 import json,re,nltk,gzip,string,unicodedata,time
@@ -60,8 +60,12 @@ def remove_symbols(tokenized_pre_processed_message):
 # remover stop words
 #===============================================================================
 def replace_stop_words(tokenized_pre_processed_message):
-    stop_words = [word for word in nltk.corpus.stopwords.words('portuguese')]
-    processed_text = [word for word in tokenized_pre_processed_message if word not in stop_words]
+    stop_words = [get_unicode_normalized(word) for word in nltk.corpus.stopwords.words('portuguese')]
+    stop_words.append('link')
+    stop_words.append('youtube')
+    stop_words.append('sobre')
+    processed_text = [word for word in tokenized_pre_processed_message
+         if word not in stop_words]
     return processed_text
 
 #===============================================================================
@@ -154,11 +158,11 @@ def join_tokenized_message(tokenized_message):
         return message_str
 
 
-def write_list_in_csv_file(pre_processed_post_list,output_file):
+def write_list_in_csv_file(pre_processed_post_list,output_file,facebook_page):
     with open(output_file, 'wt') as file:
-        file.write('created_time,id,pre_processed_message,message_min_processed,shares,status_type,full_picture,reactions_like,reactions_haha,reactions_wow,reactions_sad,reactions_angry,reactions_love,has_textual_message\n')
+        file.write('created_time,id,pre_processed_message,message_min_processed,shares,status_type,full_picture,reactions_like,reactions_haha,reactions_wow,reactions_sad,reactions_angry,reactions_love,has_textual_message,author\n')
         for processed_post in pre_processed_post_list:
-            file.write('{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13}\n'
+            file.write('{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14}\n'
                 .format(str(processed_post['created_time']),
                         str(processed_post['id']),
                         str(join_tokenized_message(processed_post['pre_processed_message'])),
@@ -172,7 +176,8 @@ def write_list_in_csv_file(pre_processed_post_list,output_file):
                         str(processed_post['reactions_sad']['summary']['total_count']),
                         str(processed_post['reactions_angry']['summary']['total_count']),
                         str(processed_post['reactions_love']['summary']['total_count']),
-                        str(processed_post['has_textual_message'])
+                        str(processed_post['has_textual_message']),
+                        str(facebook_page)
                 )
             )
 
@@ -190,11 +195,11 @@ def main():
         print('\nprocess post: {0} \n'.format(str(facebook_page)))
 
         posts_file_path = '{0}/{1}/all_posts.json.gz'.format(data_path, facebook_page)
-        output_posts_file_path = '{0}/all_pp_posts_{1}_posts.csv'.format(data_path, facebook_page)
+        output_posts_file_path = '{0}/all_pp_posts_{1}.csv'.format(data_path, facebook_page)
 
         post_list = get_list_posts_from_path(posts_file_path)
         pre_processed_post_list = generate_list_pre_processed_posts(post_list)
-        write_list_in_csv_file(pre_processed_post_list,output_posts_file_path)
+        write_list_in_csv_file(pre_processed_post_list,output_posts_file_path,facebook_page)
 
     #===========================================================================
     # final logs
