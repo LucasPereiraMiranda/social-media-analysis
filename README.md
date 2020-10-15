@@ -32,8 +32,8 @@ sociais utilizando modelos LDA e realizar análises a partir desses tópicos.
   - [x] Iniciar o Projeto
   - [x] Criar rotinas para pre-processamento das mensagens
   - [x] Definir se será aplicada uma estratégia de Stemming
-  - [ ] Definir o número de topicos que serão gerados
-  - [ ] Avaliar os tópicos gerados
+  - [x] Definir o número de topicos que serão gerados
+  - [x] Avaliar os tópicos gerados
 ```
 
 ## Techs
